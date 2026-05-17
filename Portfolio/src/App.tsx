@@ -3,26 +3,24 @@ import {
   ArrowUpRight,
   BookOpen,
   Briefcase,
-  Download,
   Github,
   Globe,
   Layers,
   Linkedin,
   Mail,
-  MapPin,
   Sparkles,
 } from "lucide-react";
 
 import {
   type ActiveNotification,
   NotificationOverlay,
-  type NotificationType,
 } from "./components/notification-system";
-import { useCallback, useEffect, useState, useMemo, lazy, Suspense } from "react";
+import { useCallback, useEffect, useState, lazy, Suspense } from "react";
 import { GlassProjectCard } from "./components/glass-project-card";
 import Lenis from "lenis";
 
 // Lazy load heavy components
+// @ts-ignore
 const AnimatedList = lazy(() => import("./components/AnimatedList"));
 
 const PROFILE = {
@@ -255,10 +253,7 @@ const BIO_PARAGRAPHS = [
   "Whether I'm reducing cloud infrastructure costs by 28%, architecting complex 6-agent language translation pipelines, or leading technical communities, I prioritize execution, measurable performance, and real-world impact."
 ];
 
-import BorderGlow from "./components/BorderGlow";
 import { ContactBlock } from "./sections/Contact";
-import { CustomCursor } from "./components/CustomCursor";
-import Silk from "./components/Silk";
 
 const Background = () => {
   return (
@@ -306,11 +301,13 @@ export default function App() {
   }, []);
 
   const [notifications, setNotifications] = useState<ActiveNotification[]>([]);
+  /*
   const addNotification = useCallback((type: NotificationType) => {
     const id = Math.random().toString(36).slice(2, 9);
     setNotifications((prev) => [...prev, { id, type }]);
     window.setTimeout(() => setNotifications((prev) => prev.filter((n) => n.id !== id)), 5000);
   }, []);
+  */
 
   const removeNotification = useCallback((id: string) => {
     setNotifications((prev) => prev.filter((n) => n.id !== id));
