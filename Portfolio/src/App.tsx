@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import {
   ArrowUpRight,
@@ -628,6 +629,7 @@ export default function App() {
           </footer>
         </>
       )}
+      <Analytics />
     </div>
   );
 }
