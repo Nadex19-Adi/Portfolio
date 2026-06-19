@@ -162,7 +162,82 @@ const GROUP_PROJECTS = [
 ];
 
 const SOLO_PROJECTS: any[] = [
-  // Add new solo projects here when provided
+  {
+    name: "KT-Bridge",
+    tech: ["React", "FastAPI", "ChromaDB", "LangChain", "Node.js", "Express", "Vite", "Docker"],
+    desc: "A professional Knowledge Transfer & Handover Automation Suite designed to capture legacy workspace details from email chains, compile comprehensive handover documentation dossiers, and extract technical repository metrics via direct local Git analysis.",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
+    githubUrl: "https://github.com/Nadex19-Adi",
+    stars: 12,
+    metrics: {
+      "Ingestion": "Outlook & Gmail EMLs",
+      "PII Masking": "Deterministic Regex",
+      "Vector DB": "Local ChromaDB Store",
+      "Analytics": "Git Commit Hotspots",
+      "Chat": "SSE Succession Chat",
+      "Status": "Production"
+    }
+  },
+  {
+    name: "Paper2Code",
+    tech: ["Streamlit", "Python", "Gemini Pro", "Ollama", "DeepSeek", "Regex"],
+    desc: "Comprehensive Research Analysis & Code Generation Platform that fetches scientific papers and patents, identifies methodological gaps/flaws, and generates optimized Python implementations to bridge the gaps.",
+    image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&q=80&w=800",
+    githubUrl: "https://github.com/Nadex19-Adi",
+    stars: 15,
+    metrics: {
+      "Pipeline": "6-Stage Analysis",
+      "LLM Core": "Gemini Pro & DeepSeek",
+      "Extraction": "Patents & Gaps",
+      "Interface": "Streamlit Dashboard",
+      "Status": "Production"
+    }
+  },
+  {
+    name: "RAG Based Training",
+    tech: ["Python", "FastAPI", "LangChain", "ChromaDB", "Streamlit", "Gemini API"],
+    desc: "AI-driven educational platform that ingests custom training manuals and technical documentation PDFs, indexes them in a local vector store, and automatically generates interactive question banks and training assessments.",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
+    githubUrl: "https://github.com/Nadex19-Adi",
+    stars: 10,
+    metrics: {
+      "Ingestion": "PDF & Docs Processing",
+      "Vector Store": "Local ChromaDB Index",
+      "Evaluation": "Interactive Assessments",
+      "LLM Orchestrator": "LangChain & Gemini",
+      "Status": "Production"
+    }
+  },
+  {
+    name: "SpotiFLAC",
+    tech: ["Go", "Wails", "Svelte", "React", "APIs"],
+    desc: "Cross-platform Spotify tracks downloader that reverse-engineers the Spotify Web Player and downloads true lossless FLAC audio from Tidal, Qobuz, Deezer, Apple Music, and Amazon Music without account requirements.",
+    image: "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&q=80&w=800",
+    githubUrl: "https://github.com/Nadex19-Adi",
+    stars: 25,
+    metrics: {
+      "Audio Quality": "True Lossless FLAC",
+      "Authentication": "Zero Account Required",
+      "Architecture": "Go Backend & Wails UI",
+      "Platforms": "Win / macOS / Linux",
+      "Status": "Production"
+    }
+  },
+  {
+    name: "Agentic Bug-Hunter",
+    tech: ["Python", "Docker", "Ollama", "CodeLlama", "ChromaDB", "Pytest", "LangGraph"],
+    desc: "Autonomous AI debugging assistant that executes buggy code inside a secure Docker sandbox, extracts runtime errors, queries a ChromaDB vector store seeded with 5,000 GitHub bug-fix pairs, and suggests validated fixes.",
+    image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&q=80&w=800",
+    githubUrl: "https://github.com/Nadex19-Adi",
+    stars: 18,
+    metrics: {
+      "Sandbox": "Docker Container",
+      "Vector DB": "ChromaDB (5k Bug-Fixes)",
+      "Control": "Human-in-the-Loop",
+      "Model": "CodeLlama (7B/34B)",
+      "Status": "Production"
+    }
+  }
 ];
 
 const EVENTS = [
