@@ -1,0 +1,16 @@
+.scroll-reveal {
+  margin: 0; /* Changed from 20px 0 so it can be controlled via Tailwind */
+}
+
+.scroll-reveal-text {
+  /* Using inherit to allow the parent's font sizing to apply, ensuring we don't break existing styles */
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+.word {
+  display: inline-block;
+  white-space: pre;
+}
