@@ -399,7 +399,7 @@ export default function App() {
                       ))}
                     </div>
                   </div>
-                  <motion.button variants={item} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="mt-10 bg-accent px-10 py-5 rounded-full font-display font-black text-xs uppercase tracking-widest text-white shadow-xl hover:scale-105 transition-all">Business Enquiries ↗</motion.button>
+                  <motion.a variants={item} href="/Aditya_Resume.pdf" download="Aditya_Patil_Resume.pdf" className="mt-10 bg-accent px-10 py-5 rounded-full font-display font-black text-xs uppercase tracking-widest text-white shadow-xl hover:scale-105 transition-all inline-block text-center">DOWNLOAD RESUME ⬇</motion.a>
                 </div>
                 <div className="hidden lg:flex flex-col gap-12 items-end text-right">
                   <div className="space-y-4">
