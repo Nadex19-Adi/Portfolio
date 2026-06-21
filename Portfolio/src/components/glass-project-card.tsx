@@ -4,16 +4,17 @@
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+
 
 interface GlassProjectCardProps {
     title: string;
     description: string;
     image: string;
     tech: string[];
-    stars?: number;
+
     metrics?: Record<string, string | undefined>;
     className?: string;
+    imageClassName?: string;
 }
 
 export function GlassProjectCard({
@@ -21,9 +22,10 @@ export function GlassProjectCard({
     description,
     image,
     tech,
-    stars,
+
     metrics,
     className,
+    imageClassName,
 }: GlassProjectCardProps) {
     return (
         <motion.div
@@ -44,7 +46,7 @@ export function GlassProjectCard({
                     <motion.img
                         src={image}
                         alt={`Preview of project: ${title}`}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className={cn("h-full w-full object-cover transition-transform duration-500 group-hover:scale-110", imageClassName)}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
 
@@ -59,12 +61,6 @@ export function GlassProjectCard({
                         <h3 className="text-[24px] font-semibold font-display leading-tight tracking-tight text-[color:var(--text-primary)] transition-colors group-hover:text-[color:var(--accent)]">
                             {title}
                         </h3>
-                        {stars !== undefined && (
-                            <div className="flex items-center gap-1 mt-1 text-xs text-muted-foreground font-medium bg-background/50 px-2.5 py-1 rounded-full border border-border/50 shrink-0">
-                                <Star className="w-3.5 h-3.5 text-yellow-500 fill-yellow-500" />
-                                <span>{stars}</span>
-                            </div>
-                        )}
                     </div>
 
                     {/* Tech Stack — always visible */}

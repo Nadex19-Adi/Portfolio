@@ -19,6 +19,7 @@ import {
 import { useCallback, useEffect, useState, lazy, Suspense } from "react";
 import { GlassProjectCard } from "./components/glass-project-card";
 import Lenis from "lenis";
+import { ProjectsSection } from "./sections/Projects";
 
 // Lazy load heavy components
 // @ts-ignore
@@ -95,107 +96,7 @@ const EXPERIENCE = [
   }
 ];
 
-const PROJECTS = [
-  {
-    name: "MemoryForm",
-    tech: ["Python", "FastAPI", "Supabase", "React"],
-    desc: "AI Long-Term Memory Engine solving LLM amnesia using integrated Sentence-Transformers and a custom weighted ranking algorithm.",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
-    githubUrl: "https://github.com/Nadex19-Adi",
-    stars: 10,
-    metrics: {
-      "Architecture": "Multi-Agent",
-      "Storage": "Hybrid PostgreSQL",
-      "Embeddings": "all-MiniLM-L6-v2",
-      "Features": "Recency & Confidence",
-      "Status": "Production"
-    }
-  },
-  {
-    name: "Bhasha AI",
-    tech: ["LangGraph", "LangChain", "Transformers"],
-    desc: "Architected a 6-agent translation workflow that handles technical glossary injection, cultural adaptation, and sentiment alignment.",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-    githubUrl: "https://github.com/Nadex19-Adi",
-    stars: 12,
-    metrics: {
-      "Scale": "6-Agent Workflow",
-      "Domain": "Localization",
-      "Quality": "High-fidelity",
-      "Status": "Production"
-    }
-  },
-  {
-    name: "SupportEnv",
-    tech: ["FastAPI", "Stable Baselines3", "Gradio", "OpenEnv"],
-    desc: "Built a production-grade Reinforcement Learning environment to train AI agents on high-stress support tickets.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
-    githubUrl: "https://github.com/Nadex19-Adi",
-    stars: 18,
-    metrics: {
-      "Type": "RL Environment",
-      "Target": "Support Tickets",
-      "Grader": "Sentiment & Accuracy",
-      "Status": "Production"
-    }
-  },
-  {
-    name: "Disaster Management",
-    tech: ["CrewAI", "Streamlit", "Transformers"],
-    desc: "Multi-agent emergency orchestrator coordinating five specialized agents for incident triage and resource management.",
-    image: "/disaster.png",
-    githubUrl: "https://github.com/Nadex19-Adi",
-    stars: 15,
-    metrics: {
-      "Architecture": "5-Agent Crew",
-      "NLP Focus": "Zero-shot RoBERTa",
-      "Task": "Incident Triage",
-      "Status": "Prototype"
-    }
-  },
-  {
-    name: "Cloud Cost Optimization",
-    tech: ["Python", "ARIMA", "LSTM", "K-Means"],
-    desc: "Hybrid cost-optimization engine that achieved a 28% reduction in cloud over-provisioning costs by accurately classifying machine workloads.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800",
-    githubUrl: "https://github.com/Nadex19-Adi",
-    stars: 15,
-    metrics: {
-      "Cost Focus": "28% Reduction",
-      "Architecture": "Hybrid Engine",
-      "Dataset": "Google Cluster Trace",
-      "Status": "Research"
-    }
-  },
-  {
-    name: "Elevare Platform",
-    tech: ["React", "Flask", "Gemini 2.5", "Supabase"],
-    desc: "AI-driven job matching platform featuring an automated ATS scoring engine and domain-specific recommendations.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800",
-    githubUrl: "https://github.com/Nadex19-Adi",
-    stars: 20,
-    metrics: {
-      "Matching": "Domain-Specific",
-      "Analysis": "Automated ATS",
-      "Platform": "Vercel Hosted",
-      "Status": "Production"
-    }
-  },
-  {
-    name: "Agri-Sethu (SIH)",
-    tech: ["Streamlit", "Scikit", "MongoDB", "SoilGrids"],
-    desc: "Smart crop recommendation system reducing fertilizer waste and improving yield prediction accuracy by 18%.",
-    image: "/crop.png",
-    githubUrl: "https://github.com/Nadex19-Adi",
-    stars: 15,
-    metrics: {
-      "Accuracy": "18% Improvement",
-      "Geospatial": "ISRO Bhuvan Maps",
-      "Database": "MongoDB",
-      "Status": "Hackathon"
-    }
-  }
-];
+
 
 const SKILL_CATEGORIES = [
   {
@@ -584,9 +485,7 @@ export default function App() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-accent/15 text-accent"><Layers className="h-5 w-5" /></div>
                 <h2 className="font-serif text-[42px] font-medium tracking-tight text-text-primary ios-heading">Projects</h2>
               </div>
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {PROJECTS.map((p) => <GlassProjectCard key={p.name} title={p.name} description={p.desc} image={p.image} tech={p.tech} metrics={p.metrics} />)}
-              </div>
+              <ProjectsSection />
             </motion.section>
 
             {/* SKILLS SECTION */}
@@ -604,6 +503,18 @@ export default function App() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </motion.section>
+
+            {/* LANGUAGES ICONS BELT */}
+            <motion.section variants={item} className="w-full py-16 flex justify-center mb-10">
+              <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 max-w-4xl">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" className="w-12 h-12 md:w-16 md:h-16 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300 hover:scale-110 drop-shadow-sm" title="Python" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="SQL" className="w-12 h-12 md:w-16 md:h-16 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300 hover:scale-110 drop-shadow-sm" title="SQL" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash" className="w-12 h-12 md:w-16 md:h-16 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300 hover:scale-110 drop-shadow-sm" title="Bash" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C/C++" className="w-12 h-12 md:w-16 md:h-16 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300 hover:scale-110 drop-shadow-sm" title="C/C++" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" className="w-12 h-12 md:w-16 md:h-16 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300 hover:scale-110 drop-shadow-sm" title="TypeScript" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" className="w-12 h-12 md:w-16 md:h-16 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300 hover:scale-110 drop-shadow-sm" title="JavaScript" />
               </div>
             </motion.section>
 
