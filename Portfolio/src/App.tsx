@@ -17,7 +17,7 @@ import {
   NotificationOverlay,
 } from "./components/notification-system";
 import { useCallback, useEffect, useState, lazy, Suspense } from "react";
-import { GlassProjectCard } from "./components/glass-project-card";
+
 import Lenis from "lenis";
 import { ProjectsSection } from "./sections/Projects";
 
