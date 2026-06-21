@@ -12,7 +12,7 @@ interface WordProps {
   blurStrength: number;
 }
 
-const Word = ({ children, progress, range, baseOpacity: _baseOpacity, enableBlur, blurStrength }: WordProps) => {
+const Word = ({ children, progress, range, enableBlur, blurStrength }: WordProps) => {
   const blur = useTransform(progress, range, [enableBlur ? blurStrength : 0, 0]);
   const filter = useTransform(blur, (v) => v > 0 ? `blur(${v}px)` : 'none');
 
@@ -32,8 +32,6 @@ const ScrollReveal = ({
   blurStrength = 4,
   containerClassName = '',
   textClassName = '',
-  rotationEnd: _rotationEnd = 'bottom bottom', // Left for API compatibility
-  wordAnimationEnd: _wordAnimationEnd = 'bottom bottom' // Left for API compatibility
 }: any) => {
   const containerRef = useRef<HTMLHeadingElement>(null);
 
