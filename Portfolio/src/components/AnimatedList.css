@@ -16,7 +16,7 @@
 }
 
 .scroll-list::-webkit-scrollbar-thumb {
-  background: rgba(139, 92, 246, 0.2);
+  background: rgba(225, 6, 0, 0.35);
   border-radius: 10px;
 }
 

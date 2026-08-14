@@ -378,19 +378,25 @@ export function ProjectsSection() {
 
   return (
     <div className="w-full">
-      {/* Category Buttons */}
-      <div className="flex flex-wrap items-center gap-4 mb-12">
-        {PROJECT_CATEGORIES.map((category) => (
+      {/* Category Tabs */}
+      <div className="mb-12 flex flex-wrap items-center gap-x-8 gap-y-4 border-b border-white/10">
+        {PROJECT_CATEGORIES.map((category, i) => (
           <button
             key={category.id}
             onClick={() => setActiveFolder(category.id)}
-            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-              activeFolder === category.id 
-                ? "bg-accent text-white shadow-lg shadow-accent/20 scale-105" 
-                : "bg-white/40 backdrop-blur-xl text-text-muted hover:bg-white/60 hover:text-text-primary border border-border/40 shadow-sm"
+            className={`group relative flex items-baseline gap-2 pb-4 font-subhead text-[11px] font-bold tracking-[0.2em] transition-colors ${
+              activeFolder === category.id ? "text-white" : "text-text-muted hover:text-white"
             }`}
           >
+            <span className={`font-display text-xs transition-colors ${activeFolder === category.id ? "text-accent" : "text-text-muted group-hover:text-accent"}`}>
+              {String(i + 1).padStart(2, "0")}
+            </span>
             {category.name}
+            <span
+              className={`absolute bottom-0 left-0 h-[2px] bg-accent transition-all duration-300 ${
+                activeFolder === category.id ? "w-full" : "w-0 group-hover:w-full"
+              }`}
+            />
           </button>
         ))}
       </div>
@@ -405,8 +411,8 @@ export function ProjectsSection() {
           className="space-y-8"
         >
           {activeCategory.projects.length === 0 ? (
-            <div className="flex flex-col items-center justify-center py-20 rounded-[2.5rem] border border-dashed border-border/60 bg-white/20">
-              <FolderOpen className="w-16 h-16 text-text-muted/30 mb-4" />
+            <div className="flex flex-col items-center justify-center py-20 rounded-xl border border-dashed border-white/15 bg-white/[0.02]">
+              <FolderOpen className="w-16 h-16 text-text-muted/40 mb-4" />
               <p className="text-text-muted font-medium">This category is currently empty.</p>
             </div>
           ) : (
