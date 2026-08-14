@@ -21,12 +21,8 @@ import {
   X,
 } from "lucide-react";
 
-import {
-  type ActiveNotification,
-  NotificationOverlay,
-} from "./components/notification-system";
 import { useTilt } from "./lib/use-tilt";
-import { useCallback, useEffect, useRef, useState, lazy, Suspense } from "react";
+import { useEffect, useRef, useState, lazy, Suspense } from "react";
 
 import Lenis from "lenis";
 import { ProjectsSection } from "./sections/Projects";
@@ -261,7 +257,6 @@ export default function App() {
   const [bootProgress, setBootProgress] = useState(0);
   const { scrollYProgress } = useScroll();
 
-  const [notifications, setNotifications] = useState<ActiveNotification[]>([]);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const heroRef = useRef<HTMLElement | null>(null);
@@ -275,10 +270,6 @@ export default function App() {
   const aiY = useTransform(heroProgress, [0, 1], [0, 220]);
   const contentY = useTransform(heroProgress, [0, 1], [0, -60]);
   const portraitY = useTransform(heroProgress, [0, 1], [0, -90]);
-
-  const removeNotification = useCallback((id: string) => {
-    setNotifications((prev) => prev.filter((n) => n.id !== id));
-  }, []);
 
   // Lock body scroll while the mobile menu is open
   useEffect(() => {
@@ -369,7 +360,6 @@ export default function App() {
       {!isLoading && (
         <>
           <Background />
-          <NotificationOverlay notifications={notifications} removeNotification={removeNotification} />
 
           {/* ===== TOP NAV ===== */}
           <motion.header
@@ -604,7 +594,7 @@ export default function App() {
                   </motion.div>
 
                   {/* Portrait — parallax + 3D tilt + grayscale-to-color hover */}
-                  <motion.div style={{ y: portraitY }} className="group relative hidden justify-self-end lg:block">
+                  <motion.div style={{ y: portraitY }} className="group relative justify-self-center lg:justify-self-end">
                     <motion.div
                       initial={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
                       animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }}
@@ -619,7 +609,7 @@ export default function App() {
                       className="will-change-transform"
                     >
                       <div className="absolute -inset-3 translate-x-5 translate-y-5 border border-accent/70" aria-hidden="true" />
-                      <div className="relative aspect-[3/4] w-[420px] overflow-hidden">
+                      <div className="relative mx-auto aspect-[3/4] w-full max-w-[420px] overflow-hidden">
                         <img
                           src={PROFILE.avatarUrl}
                           alt={PROFILE.name}
