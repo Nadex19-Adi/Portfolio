@@ -40,7 +40,7 @@ const PROFILE = {
   location: "Belgaum, India",
   email: "adityavpatil818@gmail.com",
   phone: "+91 815284 5070",
-  avatarUrl: "/profile.png",
+  avatarUrl: "/profile.jpg",
   initials: "AP",
   socials: [
     { name: "GitHub", icon: Github, url: "https://github.com/Nadex19-Adi" },
@@ -613,9 +613,9 @@ export default function App() {
                         <img
                           src={PROFILE.avatarUrl}
                           alt={PROFILE.name}
-                          className="h-[118%] w-[118%] max-w-none object-cover object-top -translate-y-[12%] contrast-125 saturate-[0.85] transition-all duration-700"
+                          className="h-full w-full object-cover contrast-[1.15] brightness-[1.05] saturate-[1.1] transition-all duration-700"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-transparent to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#060606]/50 via-transparent to-transparent" />
                       </div>
                       <div className="absolute -left-8 top-8 rotate-[-90deg] origin-top-left bg-white px-5 py-2 font-subhead text-[9px] font-bold tracking-[0.3em] text-black">
                         IEEE CHAIR 2026

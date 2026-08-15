@@ -62,7 +62,7 @@ export function GlassProjectCard({
                         alt={`Preview of project: ${title}`}
                         loading="lazy"
                         decoding="async"
-                        className={cn("h-full w-full object-cover grayscale transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0", imageClassName)}
+                        className={cn("h-full w-full object-cover transition-all duration-700 group-hover:scale-110", imageClassName)}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-[#060606]/20 to-transparent" />
                     <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center bg-accent text-white opacity-0 transition-all duration-300 group-hover:opacity-100">
