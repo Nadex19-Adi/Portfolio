@@ -31,6 +31,7 @@ import { ContactBlock } from "./sections/Contact";
 // Lazy load heavy components
 // @ts-ignore
 const AnimatedList = lazy(() => import("./components/AnimatedList"));
+const ParticleField = lazy(() => import("./components/ParticleField"));
 
 const PROFILE = {
   name: "Aditya Patil",
@@ -291,6 +292,8 @@ export default function App() {
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 2000);
+    // Preload the 3D particle chunk while the boot loader is on screen
+    import("./components/ParticleField").catch(() => {});
     return () => clearTimeout(timer);
   }, []);
 
@@ -511,6 +514,11 @@ export default function App() {
           <main className="relative z-10">
             {/* ===== HERO ===== */}
             <section id="home" ref={heroRef} className="relative flex min-h-screen flex-col justify-center overflow-hidden pt-28">
+              {/* 3D particle field background */}
+              <Suspense fallback={null}>
+                <ParticleField />
+              </Suspense>
+
               {/* Parallax background wordmark */}
               <motion.div
                 className="pointer-events-none absolute inset-x-0 top-1/2 select-none text-center"
