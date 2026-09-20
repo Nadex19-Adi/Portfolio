@@ -7,6 +7,7 @@ node_modules/
 # pnpm-lock.yaml
 
 # Build output
+.next/
 dist/
 dist-ssr/
 build/
@@ -18,8 +19,8 @@ out/
 !.env.example
 *.local
 
-# Vite / TypeScript cache
-.vite/
+# Next.js generated types + TypeScript cache
+next-env.d.ts
 *.tsbuildinfo
 tsconfig.tsbuildinfo
 
@@ -58,3 +59,18 @@ Desktop.ini
 .cache/
 .parcel-cache/
 storybook-static/
+
+# Local working files
+# brag-output/ is the Hyperframes working project for the launch film. The film
+# that actually ships is committed at Portfolio/public/brag.mp4, so this copy
+# stays local and out of the repository.
+brag-output/
+
+# AI agent tooling (re-installable, not part of the project)
+.agents/
+.claude/
+.ohmyagent/
+skills-lock.json
+
+# Internal working notes — kept local, never published
+Portfolio/AUDIT_TASKS.md
