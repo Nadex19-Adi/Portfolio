@@ -47,3 +47,5 @@ Desktop.ini
 storybook-static/
 *.pem
 *.key
+.vercel
+.env*
