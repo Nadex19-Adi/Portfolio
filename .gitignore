@@ -74,3 +74,5 @@ skills-lock.json
 
 # Internal working notes — kept local, never published
 Portfolio/AUDIT_TASKS.md
+.vercel
+.env*
