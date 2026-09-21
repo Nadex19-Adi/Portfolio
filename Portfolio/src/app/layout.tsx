@@ -15,12 +15,14 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
+const SITE_URL = "https://aditya-jcer-portfolio.vercel.app";
+
 const TITLE = "Aditya Patil — AI Systems Engineer";
 const DESCRIPTION =
   "Aditya Patil — AI Systems Engineer. Production multi-agent systems, RL environments, and long-term memory engines. IEEE Student Branch Chair (2026).";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aditya-patil.com"),
+  metadataBase: new URL(SITE_URL),
   title: TITLE,
   description: DESCRIPTION,
   applicationName: "Aditya Patil",
@@ -43,7 +45,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://aditya-patil.com/",
+    url: SITE_URL,
     title: TITLE,
     description:
       "AI Systems Engineer. Production multi-agent systems, RL environments, and long-term memory engines. IEEE Student Branch Chair (2026).",
@@ -71,7 +73,7 @@ const PERSON_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Aditya Patil",
-  url: "https://aditya-patil.com/",
+  url: SITE_URL,
   jobTitle: "AI Systems Engineer",
   sameAs: [
     "https://github.com/Nadex19-Adi",

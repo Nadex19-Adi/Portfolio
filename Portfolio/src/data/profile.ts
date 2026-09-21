@@ -21,7 +21,7 @@ export const PROFILE = {
       icon: Linkedin,
       url: "https://www.linkedin.com/in/aditya-patil-77aab2352/",
     },
-    { name: "Portfolio", icon: Globe, url: "https://aditya-patil.com/" },
+    { name: "Portfolio", icon: Globe, url: "https://aditya-jcer-portfolio.vercel.app/" },
   ],
   emailIcon: Mail,
 };
